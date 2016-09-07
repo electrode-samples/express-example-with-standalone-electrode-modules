@@ -40,7 +40,9 @@ config
 
 ```
 {
-  "connections": {
+  "server": {
+    "viewCache": false,
+    "xPoweredBy": true,
     "port": 4000
   }
 }
@@ -50,31 +52,37 @@ config
 
 ```
 {
-  "connections": {
+  "server": {
+    "viewCache": false,
+    "xPoweredBy": true,
     "port": 4000
   }
 }
 ```
 
-- The above settings run the server in port 4000
+- The above settings disable view cache, enable x-powered-by header and run the server in port 4000
 - Update the `config/production.json` to have the following settings: 
 
 ```
 {
-  "connections": {
+  "server": {
+    "viewCache": true,
+    "xPoweredBy": false,
     "port": 8000
   }
 }
 ```
 
-- The above settings run the server in port 8000
+- The above settings enable view cache, disable x-powered-by header and run the server in port 8000
 - Keys that exist in the `config/default.json` that are also in the other environment configs will be replaced by the environment specific versions
 - Add the following to app.js: 
 
 ```
 const config = require("electrode-confippet").config;
 
-app.listen(config.connections.port);
+app.set("view cache", config.server.viewCache);
+app.set("x-powered-by", config.server.xPoweredBy);
+app.listen(config.server.port);
 ```
 
 - Start the express app in `development` environment: 

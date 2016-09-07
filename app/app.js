@@ -58,6 +58,8 @@ app.use(function(err, req, res, next) {
   });
 });
 
-app.listen(config.connections.port);
+app.set("view cache", config.server.viewCache);
+app.set("x-powered-by", config.server.xPoweredBy);
+app.listen(config.server.port);
 
 module.exports = app;

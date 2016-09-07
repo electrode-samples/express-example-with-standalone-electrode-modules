@@ -1,5 +1,7 @@
 {
-  "connections": {
+  "server": {
+    "viewCache": true,
+    "xPoweredBy": false,
     "port": 8000
   }
 }
