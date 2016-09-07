@@ -30,64 +30,51 @@ cd config
 
 ```
 config
+|_ default.json
 |_ development.json
 |_ production.json
 ```
 
 - Add your configuration settings 
-- Update the `config/development.json` to have the following settings: 
+- Update the `config/default.json` to have the following settings: 
 
 ```
-TBD:
 {
-  "server": {
-    "connections": {
-      "compression": false
-    },
-    "debug": {
-      "log": ["error"],
-      "request": ["error"]
-    }
-  },
   "connections": {
-    "default": {
-      "port": 3000
-    }
+    "port": 4000
   }
 }
 ```
 
-- TBD: The above settings should show server log errors that may be beneficial for debugging, disable content encoding, and run the server in port 3000
+- Update the `config/development.json` to have the following settings: 
+
+```
+{
+  "connections": {
+    "port": 4000
+  }
+}
+```
+
+- The above settings run the server in port 3000
 - Update the `config/production.json` to have the following settings: 
 
 ```
 {
-  TBD:
-  "server": {
-    "connections": {
-      "compression": true
-    },
-    "debug": {
-      "log": false,
-      "request": false
-    }
-  },
   "connections": {
-    "default": {
-      "port": 8000
-    }
+    "port": 8000
   }
 }
 ```
 
-- TBD: The above settings should disable server log errors, enable content encoding, and run the server in port 8000
-- TBD: The `server` key related configs are from hapi.js. More config options can be found here: http://hapijs.com/api
-- TBD: The `connections` key are electrode server specific: https://github.com/electrode-io/electrode-server/tree/master/lib/config
+- The above settings run the server in port 8000
+- Keys that exist in the `config/default.json` that are also in the other environment configs will be replaced by the environment specific versions
 - Add the following to app.js: 
 
 ```
 const config = require("electrode-confippet").config;
-const url = config.settings.url;
+
+app.listen(config.connections.port);
 ```
 
 - Start the express app in `development` environment: 

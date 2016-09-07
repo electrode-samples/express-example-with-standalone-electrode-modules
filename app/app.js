@@ -1,3 +1,5 @@
+const config = require("electrode-confippet").config;
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -56,5 +58,6 @@ app.use(function(err, req, res, next) {
   });
 });
 
+app.listen(config.connections.port);
 
 module.exports = app;
