@@ -56,7 +56,7 @@ config
 }
 ```
 
-- The above settings run the server in port 3000
+- The above settings run the server in port 4000
 - Update the `config/production.json` to have the following settings: 
 
 ```
