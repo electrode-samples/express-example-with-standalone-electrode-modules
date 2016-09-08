@@ -1,0 +1,7 @@
+{
+  "server": {
+    "viewCache": false,
+    "xPoweredBy": true,
+    "port": 4000
+  }
+}
