@@ -13,8 +13,7 @@ npm install
 ```
 
 ## Electrode Confippet
-- Confippet is a versatile utility for managing your NodeJS application configuration. Its goal is customization and extensibility, but offers a preset config out of the box.
-- https://github.com/electrode-io/electrode-confippet
+- [Confippet](https://github.com/electrode-io/electrode-confippet) is a versatile utility for managing your NodeJS application configuration. Its goal is customization and extensibility, but offers a preset config out of the box.
 
 ```
 npm install electrode-confippet --save
