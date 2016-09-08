@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "express-app-with-electrode-modules",
   "version": "0.0.0",
   "private": true,
   "scripts": {
