@@ -1,4 +1,5 @@
 const config = require("electrode-confippet").config;
+const csrfMiddleware = require("electrode-csrf-jwt").expressMiddleware;
 
 var express = require('express');
 var path = require('path');
@@ -23,6 +24,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// csrf-jwt plugin configuration, should come before routes
+const csrfOptions = {
+  secret: "shhhhhh",
+  expiresIn: 60
+};
+
+app.use(csrfMiddleware(csrfOptions));
 
 app.use('/', routes);
 app.use('/users', users);

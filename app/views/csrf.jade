@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  script(type='text/javascript' src='http://code.jquery.com/jquery-3.1.0.min.js')
+  script(type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.3/js.cookie.js')
+  script(type='text/javascript' src='/javascripts/csrf.js')
+  h1= title
+  p This page demonstrates usage of the #[a(href="https://github.com/electrode-io/electrode-csrf-jwt") electrode-csrf-jwt] module. Two endpoints are declared in #[code app.js]:
+    ul
+      li a GET endpoint, #[code /1], to which the module automatically adds a csrf token header
+      li a POST endpoint, #[code /2], to which the module automatically ensures the presence of a valid token in the request headers
+  p Two simple tests via AJAX (JavaScript must be enabled) are demonstrated below:
+  ul
+    li: #[a#test-valid-link(href="#") Test Valid POST] using a token retrieved from #[code /1] first (should succeed with status 200)
+    li: #[a#test-invalid-link(href="#") Test Invalid POST] using a forged token (should fail with status 500)
+  #test-results
