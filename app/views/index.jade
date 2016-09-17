@@ -1,5 +1,9 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div
+    h1 Hello #[a(href="https://github.com/electrode-io") Electrode]
+    h2 Demonstration Components
+    ul
+      li #[a(href="/csrf") CSRF protection using electrode-csrf-jwt]
+      
