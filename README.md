@@ -178,3 +178,5 @@ In addition to the above steps, the following modifications were made in order t
 * Two endpoints were added to `app/routes/index.js`
 * AJAX testing logic was added in `app/public/javascripts/csrf.js`
 * Links to tests were added to `app/views/csrf.jade`
+
+Built with :heart: by [Team Electrode](https://github.com/orgs/electrode-io/people) @WalmartLabs.
